@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+#game-container {
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+  gap: 5px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 0;
+}
+
+#connection-canvas {
+  position: absolute;
+  top: 10px; /* Same as game board padding */
+  left: 10px;
+  width: 675px; /* Adjust based on grid size: 8*80 + 7*5 = 640 + 35 = 675px */
+  height: 675px;
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 1; /* Ensure it's above the game board */
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  user-select: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.tile.selected {
+  background-color: #ffeb3b;
+  transform: scale(1.05);
+}
+
+.tile.matched {
+  visibility: hidden;
+}
+
+.tile.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.tile.invalid {
+  animation: flash 0.3s;
+}
+
+@keyframes flash {
+  0% { background-color: #ffcccc; }
+  100% { background-color: #fff; }
+}
+
+#controls {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#score {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Sound Controls Styles */
+#sound-controls {
+  margin-top: 10px;
+}
+
+#volume {
+  width: 100px;
+  margin: 0 10px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onet Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Onet Game</h1>
+  <div id="game-container" style="position: relative;">
+    <canvas id="connection-canvas"></canvas>
+    <div id="game-board"></div>
+    <div id="controls">
+      <button id="shuffle-btn">Shuffle</button>
+      <button id="reset-btn">Reset</button>
+      <div id="score">Score: 0</div>
+      <div id="sound-controls">
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+        <button id="mute-btn">Mute</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Audio Elements -->
+  <audio id="move-sound" src="sounds/move.mp3" preload="auto"></audio>
+  <audio id="match-sound" src="sounds/match.mp3" preload="auto"></audio>
+  <audio id="fail-sound" src="sounds/fail.mp3" preload="auto"></audio>
+  <audio id="win-sound" src="sounds/winning.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
